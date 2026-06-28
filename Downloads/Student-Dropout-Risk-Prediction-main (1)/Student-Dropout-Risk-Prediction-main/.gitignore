@@ -10,6 +10,12 @@
 !.yarn/releases
 !.yarn/versions
 
+# database (IMPORTANT)
+db/*.db
+prisma/db/*.db
+*.sqlite
+*.sqlite3
+
 # testing
 /coverage
 
