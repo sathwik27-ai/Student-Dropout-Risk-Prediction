@@ -1,5 +1,7 @@
 # Student-Dropout-Risk-Prediction
 
+🚀 Live Demo: https://student-dropout-risk-prediction-sigma.vercel.app
+
 An AI-powered web application that predicts student dropout risk, generates personalized career roadmaps, and provides actionable insights to improve academic success.
 
 ---
@@ -8,317 +10,198 @@ An AI-powered web application that predicts student dropout risk, generates pers
 
 ### Core Features
 - Student dropout risk prediction using rule-based analytics
-- Role-based dashboards for Students and Teachers
-- Batch CSV upload for bulk student predictions
+- Role-based dashboards (Student / Teacher)
+- Batch CSV upload for bulk predictions
 - AI-powered career roadmap generation
 - Interactive analytics dashboards
 - Secure JWT authentication
+- Neon PostgreSQL database integration
+- Real-time student performance insights
 
-### Student Features
-- Personal risk score analysis
+---
+
+### 🎓 Student Features
+- Personal dropout risk score
 - Performance insights by subject/topic
 - Personalized career roadmap
 - Learning resource recommendations
-- Progress tracking.
+- Progress tracking dashboard
 
-### Teacher Features
+---
+
+### 👨‍🏫 Teacher Features
 - Class-wide risk analytics
-- Bulk student data upload
+- Bulk student data upload (CSV)
 - Student monitoring dashboard
 - Early intervention suggestions
-- Report generation.
+- Report generation
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- Next.js 15
+- Next.js 15 (App Router)
 - TypeScript
 - Tailwind CSS
 - shadcn/ui
 - Recharts
 
 ### Backend
-- Node.js
 - Next.js API Routes
+- Node.js
 - Prisma ORM
-- SQLite Database
+- PostgreSQL (Neon DB)
 - JWT Authentication
 - bcryptjs
 
 ### AI / Analytics
 - z-ai-web-dev-sdk
-- Custom prediction engine
-- Explainable risk analysis
+- Custom rule-based prediction engine
+- Explainable risk scoring system
 
 ---
 
-## 📋 Prerequisites
+## 🌐 Deployment
 
-Install:
-- Node.js 18+
-- npm
-- Git
-
-Check versions:
-
-```bash
-node -v
-npm -v
-```
+- Frontend + Backend: Vercel
+- Database: Neon PostgreSQL
 
 ---
 
-## 🚀 Local Setup
+## 📦 Local Setup
 
 ### 1. Clone repository
-
 ```bash
 git clone https://github.com/sathwik27-ai/Student-Dropout-Risk-Prediction.git
 cd Student-Dropout-Risk-Prediction
 ```
-
-### 2. Install dependencies
-
+2. Install dependencies
 ```bash
 npm install
 ```
 
----
+🔐 Environment Variables
 
-## 🔐 Environment Setup
-
-Create a `.env` file in project root:
-
-```env
-DATABASE_URL="file:./prisma/custom.db"
+Create a .env file in the root directory:
+```bash
+DATABASE_URL="your-neon-postgres-url"
 JWT_SECRET="your-secret-key"
 ```
 
-Example:
+⚠ IMPORTANT:
 
-```env
-DATABASE_URL="file:./prisma/custom.db"
-JWT_SECRET="student-dropout-secure-key"
-```
+Never push .env to GitHub
+Add it to .gitignore
 
----
-
-## 🗄 Database Setup
-
-Generate Prisma client:
-
+🗄 Database Setup (Prisma + Neon)
 ```bash
 npx prisma generate
-```
-
-Push schema to database:
-
-```bash
 npx prisma db push
 ```
 
-This automatically creates:
-
-```text
-prisma/custom.db
-```
-
-Optional: seed database
-
+(Optional seed data)
 ```bash
 npx tsx src/lib/seed.ts
 ```
 
----
-
-## ▶ Running Project
-
-Start development server:
-
+▶ Run Project Locally
 ```bash
 npm run dev
 ```
-
 Open:
 
-```text
 http://localhost:3001
-```
 
-(Port may vary depending on availability.)
+🔐 Demo Login Credentials
 
----
+Teacher :
 
-## 🔐 Default Login Credentials
+Email: teacher@university.edu
 
-### Teacher
-Email:
-```text
-teacher@university.edu
-```
+Password: teacher123
 
-Password:
-```text
-teacher123
-```
+Student :
 
-### Student
-Email:
-```text
-alice@university.edu
-```
+Email: alice@university.edu
 
-Password:
-```text
-student123
-```
+Password: student123
 
----
+📊 Prediction Factors
 
-## 📊 Prediction Factors
+GPA
 
-Risk score is based on:
-- GPA
-- Attendance
-- Assignments missed
-- Previous backlogs
-- Mental health score
+Attendance
 
-### Risk Levels
-- LOW → 0–33%
-- MEDIUM → 34–66%
-- HIGH → 67–100%
+Assignments missed
 
----
+Backlogs
 
-## 📁 Project Structure
+Engagement level
 
-```text
+📁 Project Structure
+```bash
 src/
 ├── app/
 │   ├── api/
 │   ├── student/
 │   ├── teacher/
-│   └── globals.css
+│   └── page.tsx
 ├── components/
 ├── contexts/
 ├── hooks/
 └── lib/
-    ├── auth.ts
-    ├── db.ts
-    └── seed.ts
-
 prisma/
 └── schema.prisma
 ```
 
----
+⚠ Troubleshooting
 
-## 🔧 Scripts
-
-```bash
-npm run dev
-```
-Start development server
-
-```bash
-npm run build
-```
-Build project
-
-```bash
-npm run start
-```
-Production build
-
-```bash
-npm run lint
-```
-Lint code
+Prisma issues
 
 ```bash
 npx prisma generate
-```
-Generate Prisma client
-
-```bash
-npx prisma db push
-```
-Sync database schema
-
----
-
-## ⚠ Troubleshooting
-
-### Prisma Client Error
-
-Error:
-
-```text
-Prisma client did not initialize
-```
-
-Fix:
-
-```bash
-npx prisma generate
-```
-
----
-
-### Database File Error
-
-Error:
-
-```text
-Unable to open database file
-```
-
-Fix:
-1. Ensure `.env` exists
-2. Verify:
-
-```env
-DATABASE_URL="file:./prisma/custom.db"
-```
-
-Then run:
-
-```bash
 npx prisma db push
 ```
 
+#Database connection error :
+
+Check .env file
+
+Verify Neon DATABASE_URL
+
+Ensure internet connection
+
+🚀 Future Enhancements
+
+Machine Learning-based prediction model
+
+Email alerts for at-risk students
+
+Mobile app version
+
+LMS integration
+
+Advanced analytics dashboard
+
+AI-powered recommendations upgrade
+
+📌 Project Status
+
+✔ Fully deployed
+
+✔ Production-ready
+
+✔ Database connected (Neon PostgreSQL)
+
+✔ Authentication working
+
+✔ Vercel deployment active
+
+❤️ Built For
+
+Helping educational institutions identify at-risk students early and improve academic success using data-driven insights and AI-powered analytics.
+
+
 ---
 
-### Git Push Rejected
-
-If push fails with:
-
-```text
-fetch first
-```
-
-Run:
-
-```bash
-git pull origin main --allow-unrelated-histories
-git push origin main
-```
-
----
-
-## 🚀 Future Enhancements
-
-- Real-time notifications
-- Mobile application
-- Advanced ML models
-- LMS integration
-- Multi-language support
-- Email alerts
-- Peer mentoring
-
----
-
-Built with ❤️ for helping students succeed academically.
