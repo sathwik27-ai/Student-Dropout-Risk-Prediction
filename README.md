@@ -129,15 +129,15 @@ Password: student123
 
 📊 Prediction Factors
 
-GPA
+1.GPA
 
-Attendance
+2.Attendance
 
-Assignments missed
+3.Assignments missed
 
-Backlogs
+4.Backlogs
 
-Engagement level
+5.Engagement level
 
 📁 Project Structure
 ```bash
@@ -164,27 +164,27 @@ npx prisma generate
 npx prisma db push
 ```
 
-#Database connection error :
+Database connection error :
 
-Check .env file
+1.Check .env file
 
-Verify Neon DATABASE_URL
+2.Verify Neon DATABASE_URL
 
-Ensure internet connection
+3.Ensure internet connection
 
 🚀 Future Enhancements
 
-Machine Learning-based prediction model
+1.Machine Learning-based prediction model
 
-Email alerts for at-risk students
+2.Email alerts for at-risk students
 
-Mobile app version
+3.Mobile app version
 
-LMS integration
+4.LMS integration
 
-Advanced analytics dashboard
+5.Advanced analytics dashboard
 
-AI-powered recommendations upgrade
+6.AI-powered recommendations upgrade
 
 📌 Project Status
 
