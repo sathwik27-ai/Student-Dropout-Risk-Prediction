@@ -1,0 +1,13 @@
+@echo off
+echo Stopping all Node.js processes...
+taskkill /f /im node.exe >nul 2>&1
+
+echo Waiting for processes to stop...
+timeout /t 3 /nobreak >nul
+
+echo Setting environment variables...
+set DATABASE_URL=file:./db/custom.db
+set JWT_SECRET=your-super-secret-jwt-key-change-in-production
+
+echo Starting development server...
+npm run dev
